@@ -1,0 +1,15 @@
+.data-table {
+  table-layout: fixed;
+  margin:40px auto 0px auto;
+}
+.data-table, td, th {border-collapse:collapse; border:1px solid #777;}
+ th { font-size:15px; color:#444; background:lightskyblue}
+ td { height:35px;}
+
+.data-table-outer {
+  overflow-x: scroll;
+}
+
+.content {
+  display: block !important;
+}

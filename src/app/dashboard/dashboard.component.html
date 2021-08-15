@@ -1,0 +1,55 @@
+<div class="content data-table-outer wrapper" role="main">
+  <div class="d-flex justify-content-lg-start mb-3">
+    <button  class="btn btn-primary" (click)="goBack()">
+      Edit Inputs
+    </button>
+  </div>
+  <table class="table search-table inner">
+    <thead>
+      <tr>
+        <th scope="col"> # </th>
+        <th scope="col" *ngFor="let data of balanceData let i=index" >{{data.year}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Age</th>
+        <td *ngFor="let data of balanceData" class="text-left">{{data.age}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Start Balance</th>
+        <td *ngFor="let data of balanceData" class="text-left">{{data.startBalance}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Contributions</th>
+        <td *ngFor="let data of balanceData" class="text-left">{{data.contributions}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Earnings</th>
+        <td *ngFor="let data of balanceData" class="text-left">{{data.earnings}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Fees</th>
+        <td *ngFor="let data of balanceData" class="text-left">{{data.fees}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Tax</th>
+        <td *ngFor="let data of balanceData" class="text-left">{{data.tax}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Withdrawals</th>
+        <td *ngFor="let data of balanceData" class="text-left">{{data.withdrawals}}</td>
+      </tr>
+      <tr>
+        <th scope="row">End Balance</th>
+        <td *ngFor="let data of balanceData" class="text-left">{{data.endBalance}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div  class="content">
+  <app-line-chart></app-line-chart>
+</div>
+
+
+

@@ -1,0 +1,101 @@
+<div class="content" role="main">
+  <span class="h6 fw-bold mb-3">Inputs</span>
+  <form [formGroup]="inputForm" class="w-100" (ngSubmit)="generateProjection()">
+    <div class="row form-group ">
+      <label for="salary" class="col-sm-2 fw-bold mb-3">Salary</label>
+      <div class="col-sm-10 mb-3">
+        <input type="text" class="form-control" formControlName="salary" id="salary" [ngClass]="{ 'is-invalid': submitted && f.salary.errors }">
+        <div *ngIf="submitted && f.salary.errors" class="invalid-feedback">
+          <div *ngIf="f.salary.errors.required">Salary is required</div>
+          <div *ngIf="f.salary.errors?.pattern ">Salary is not valid</div>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="contributionRate" class="col-sm-2 fw-bold mb-3">Contribution Rate</label>
+      <div class="col-sm-10 mb-3">
+        <input type="text" class="form-control" formControlName="contributionRate" id="contributionRate" [ngClass]="{ 'is-invalid': submitted && f.contributionRate.errors }">
+        <div *ngIf="submitted && f.contributionRate.errors" class="invalid-feedback">
+          <div *ngIf="f.contributionRate.errors.required">Contribution Rate is required</div>
+          <div *ngIf="f.contributionRate.errors?.pattern ">Contribution Rate is not valid</div>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="inflationRate" class="col-sm-2 col-form-label fw-bold mb-3">Inflation Rate</label>
+      <div class="col-sm-10 mb-3">
+        <input type="text" class="form-control" formControlName="inflationRate" id="inflationRate" [ngClass]="{ 'is-invalid': submitted && f.inflationRate.errors }">
+        <div *ngIf="submitted && f.inflationRate.errors" class="invalid-feedback">
+          <div *ngIf="f.inflationRate.errors.required">Inflation Rate is required</div>
+          <div *ngIf="f.inflationRate.errors?.pattern ">Inflation Rate is not valid</div>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="earnings" class="col-sm-2 col-form-label fw-bold mb-3">Earnings</label>
+      <div class="col-sm-10 mb-3">
+        <input type="text" class="form-control" formControlName="earnings" id="earnings" [ngClass]="{ 'is-invalid': submitted && f.earnings.errors }">
+        <div *ngIf="submitted && f.earnings.errors" class="invalid-feedback">
+          <div *ngIf="f.earnings.errors.required">Earnings is required</div>
+          <div *ngIf="f.earnings.errors?.pattern ">Earnings is not valid</div>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="fees" class="col-sm-2 col-form-label fw-bold mb-3">Fees</label>
+      <div class="col-sm-10 mb-3">
+        <input type="text" class="form-control" formControlName="fees" id="fees" [ngClass]="{ 'is-invalid': submitted && f.fees.errors }">
+        <div *ngIf="submitted && f.fees.errors" class="invalid-feedback">
+          <div *ngIf="f.fees.errors.required">Fees is required</div>
+          <div *ngIf="f.fees.errors?.pattern ">Fees is not valid</div>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="tax" class="col-sm-2 col-form-label fw-bold mb-3">Tax</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control mb-3" formControlName="tax" id="tax" [ngClass]="{ 'is-invalid': submitted && f.tax.errors }">
+        <div *ngIf="submitted && f.tax.errors" class="invalid-feedback">
+          <div *ngIf="f.tax.errors.required">Tax is required</div>
+          <div *ngIf="f.tax.errors?.pattern">Tax is not valid</div>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="withdrawalRate" class="col-sm-2 col-form-label fw-bold mb-3">Withdrawal Rate</label>
+      <div class="col-sm-10 mb-3">
+        <input type="text" class="form-control" formControlName="withdrawalRate" id="withdrawalRate" [ngClass]="{ 'is-invalid': submitted && f.withdrawalRate.errors }">
+        <div *ngIf="submitted && f.withdrawalRate.errors" class="invalid-feedback">
+          <div *ngIf="f.withdrawalRate.errors.required">Withdrawal rate is required</div>
+          <div *ngIf="f.withdrawalRate.errors?.pattern">Withdrawal rate is not valid</div>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="withdrawalBegin" class="col-sm-2 col-form-label fw-bold mb-3">Withdrawal Begins At Age</label>
+      <div class="col-sm-10 mb-3">
+        <input type="text" class="form-control" formControlName="withdrawalBegin" id="withdrawalBegin" [ngClass]="{ 'is-invalid': submitted && f.withdrawalBegin.errors }">
+        <div *ngIf="submitted && f.withdrawalBegin.errors" class="invalid-feedback">
+          <div *ngIf="f.withdrawalBegin.errors.required">Withdrawal Age is required</div>
+          <div *ngIf="f.withdrawalBegin.errors?.pattern">Withdrawal Age is not valid</div>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="contributionStop" class="col-sm-2 col-form-label fw-bold mb-3">Contribution Stops At Age</label>
+      <div class="col-sm-10 mb-3">
+        <input type="text" class="form-control" formControlName="contributionStop" id="contributionStop" [ngClass]="{ 'is-invalid': submitted && f.contributionStop.errors }">
+        <div *ngIf="submitted && f.contributionStop.errors" class="invalid-feedback">
+          <div *ngIf="f.contributionStop.errors.required">Contribution Age is required</div>
+          <div *ngIf="f.contributionStop.errors?.pattern">Contribution Age is not valid</div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button [disabled]="loading" class="btn btn-primary">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Generate Balance Projection
+      </button>
+    </div>
+  </form>
+</div>
